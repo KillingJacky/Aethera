@@ -27,7 +27,10 @@ The sensor is created with Seeeduino Cloud and several sensors.
 
 
 ##Deployment
-###1. Arduino Side
+
+###1. Software
+
+####1.1. Arduino Side
 
 Step 1: Download the project: https://github.com/KillingJacky/Aethera/archive/master.zip and then unzip it.
 
@@ -41,7 +44,7 @@ Step 5: Select board type "Arduino Leonardo" and the right tty/COM port in Ardui
 
 Step 6: Upload the sketch.
 
-###2. OpenWrt Side
+####1.2. OpenWrt Side
 
 Step 1: Same as Arduino Side's step 1.
 
@@ -62,11 +65,17 @@ Step 4: Reboot the Seeeduino Cloud, wait one or two minutes, then view the senso
 	
 ![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/sensor_readings.png)
 
-##Pictures
+###2. Assembly
+
+TODO
+
 
 ![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/assembly1.png)
+
 ![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/assembly2.png)
+
 ![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/assembly3.png)
+
 ![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/deployment_at_office.png)
 
 
