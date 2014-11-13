@@ -1,0 +1,47 @@
+
+config settings 'general'
+	option server 'xively'
+	option DeviceName 'DRAGINO-A84041138344'
+	option deviceid '224139911'
+	option uartmode 'passthrough'
+	option uartbaud '115200'
+	option ApiKey 'eTdeamUvkGdsHiatFagfKFrMAsaWURPTcp6kaEYvnuZgk6L7'
+	option debug '2'
+	option user 'root'
+	option pass 'seeeduino'
+
+config sensor 'AirQualitySensor'
+	option uploadtype 'generic'
+	option remoteid 'AirQualitySensor'
+	option pattern '/Air Quality/([-%d%.]+)'
+
+config sensor 'DustSensor'
+	option uploadtype 'generic'
+	option remoteid 'DustSensor'
+	option pattern '/Particulate Density/([-%d%.]+)'
+
+config sensor 'HumiditySensor'
+	option uploadtype 'generic'
+	option remoteid 'HumiditySensor'
+	option pattern '/Humidity/([-%d%.]+)'
+
+config sensor 'LightSensor'
+	option uploadtype 'generic'
+	option remoteid 'LightSensor'
+	option pattern '/Visible Light/([-%d%.]+)'
+
+config sensor 'SoundSensor'
+	option uploadtype 'generic'
+	option remoteid 'SoundSensor'
+	option pattern '/Sound Raw/([-%d%.]+)'
+
+config sensor 'TempSensor'
+	option uploadtype 'generic'
+	option remoteid 'TempSensor'
+	option pattern '/Temperature/([-%d%.]+)'
+
+config sensor 'UVSensor'
+	option uploadtype 'generic'
+	option remoteid 'UVSensor'
+	option pattern '/UV Raw/([-%d%.]+)'
+
