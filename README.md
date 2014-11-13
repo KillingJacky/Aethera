@@ -8,7 +8,14 @@ The sensor is created with Seeeduino Cloud and several sensors.
 
 - Seeeduino Cloud
 
-		Seeeduino Cloud is a microcontroller board based on Dragino WiFi IoT module HE and ATmega32u4. HE is a high performance, low cost 150M, 2.4G WiFi module which means “core” in Chinese and with an Open Source OpenWrt system inside. Seeeduino Cloud is also an Arduino compatible board, 100% compatible to grove, shield and IDEs(>=1.5.3). Except for the normal interface of Arduino, Seeeduino Cloud has built-in Ethernet and WiFi support, a USB-A port which makes it very suitable for those prototype design that need network connection and mass storage. It is also a good idea to make Seeeduino Cloud to be an IoT gateway. 	
+		Seeeduino Cloud is a microcontroller board based on Dragino WiFi IoT module HE and
+		ATmega32u4. HE is a high performance, low cost 150M, 2.4G WiFi module which means
+		“core” in Chinese and with an Open Source OpenWrt system inside. Seeeduino Cloud is 
+		also an Arduino compatible board, 100% compatible to grove, shield and IDEs(>=1.5.3).
+		Except for the normal interface of Arduino, Seeeduino Cloud has built-in Ethernet
+		and WiFi support, a USB-A port which makes it very suitable for those prototype
+		design that need network connection and mass storage. It is also a good idea to
+		make Seeeduino Cloud to be an IoT gateway. 	
 - Grove - Air Quality Sensor
 - Grove - Dust Sensor
 - Grove - Sound Sensor
@@ -40,12 +47,26 @@ Step 1: Same as Arduino Side's step 1.
 
 Step 2: Config the Seeeduino Cloud to connect to your home's WiFi AP, refer to [this wiki](http://www.seeedstudio.com/wiki/Seeeduino_Cloud#Configure_Network).
 
-Step 3: Copy the xively configure files to Seeeduino Cloud:
+Step 3: Config xively channels:
 
-	3.1 TODO
+	3.1 ssh to seeeduino cloud: ssh root@seeed.local, password is [seeeduino]
+	3.2 # cd /tmp
+	3.3 # wget --no-check-certificate https://github.com/KillingJacky/Aethera/raw/master/AetheraCloud/iot
+	3.4 # wget --no-check-certificate https://github.com/KillingJacky/Aethera/raw/master/AetheraCloud/uart_passthrough.lua
+	3.5 # cp iot /etc/config/iot
+	3.6 # cp uart_passthrough.lua /usr/lib/lua/dragino/uart_passthrough.lua
 	
 Step 4: Reboot the Seeeduino Cloud, wait one or two minutes, then view the sensor reading at https://xively.com/feeds/224139911
+	
+	# reboot
+	
+![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/sensor_readings.png)
 
 ##Pictures
 
-TODO
+![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/assembly1.png)
+![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/assembly2.png)
+![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/assembly3.png)
+![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/deployment_at_office.png)
+
+
