@@ -59,11 +59,8 @@ Step 3: Config xively channels:
 	3.5 # cp iot /etc/config/iot
 	3.6 # cp uart_passthrough.lua /usr/lib/lua/dragino/uart_passthrough.lua
 	
-Step 4: Reboot the Seeeduino Cloud, wait one or two minutes, then view the sensor reading at https://xively.com/feeds/224139911
 	
-	# reboot
-	
-![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/sensor_readings.png)
+
 
 ###2. Assembly
 
@@ -78,4 +75,9 @@ TODO
 
 ![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/deployment_at_office.png)
 
+
+###3. Result
+Sensor reading at https://xively.com/feeds/224139911
+
+![image](https://raw.githubusercontent.com/KillingJacky/Aethera/master/images/sensor_readings.png)
 
