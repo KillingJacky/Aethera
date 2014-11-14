@@ -63,6 +63,23 @@ Step 3: Config xively channels:
 
 ###2. Assembly
 
+####2.1 Modules assembly
+Step 1: Plug Base Shield onto Seeeduino Cloud.
+
+Step 2: Plug Groves to Base Shield as the following map:
+
+	Grove - UV Sensor                  ---- A2
+	Grove - Sound Sensor               ---- A0
+	Grove - Dust Sensor                ---- D7
+	Grove - Air Quality Sensor         ---- A1
+	Grove - Temperature & Humidity Pro ---- D4
+	Grove - Digital Light Sensor       ---- I2C
+And then make sure the switch on Base Shield switched to "5V" side.
+
+####2.2 Housing assembly
+
+
+
 TODO
 
 
