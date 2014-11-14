@@ -54,6 +54,8 @@ Step 3: Config xively channels:
 
 	3.1 ssh to seeeduino cloud: ssh root@seeed.local, password is [seeeduino]
 	3.2 # cd /tmp
+		# opkg update
+		# opkg install wget
 	3.3 # wget --no-check-certificate https://github.com/KillingJacky/Aethera/raw/master/AetheraCloud/iot
 	3.4 # wget --no-check-certificate https://github.com/KillingJacky/Aethera/raw/master/AetheraCloud/uart_passthrough.lua
 	3.5 # cp iot /etc/config/iot
