@@ -142,7 +142,7 @@ void setup() {
 void loop()
 {
   //real time task
-  air_quality_state_machine();
+  //air_quality_state_machine();
 
   //slow task
   push_data();
@@ -187,19 +187,20 @@ void push_data()
     SER_PUSH.print(",");
 
     SER_PUSH.print(F("/Air Quality/"));  //~0ms
-    switch (aq_result)
-    {
-      case AQ_WARMUP:
-        SER_PUSH.print(-1/*F("WarmUp")*/); break;
-      case AQ_FRESH:
-        SER_PUSH.print(0/*F("Fresh")*/); break;
-      case AQ_LOW_POLLUTION:
-        SER_PUSH.print(1/*F("LowPollution")*/); break;
-      case AQ_POLLUTION:
-        SER_PUSH.print(2/*F("Pollution")*/); break;
-      case AQ_HIGH_POLLUTION:
-        SER_PUSH.print(3/*F("HighPollution")*/); break;
-    }
+    //switch (aq_result)
+    //{
+    //  case AQ_WARMUP:
+    //    SER_PUSH.print(-1/*F("WarmUp")*/); break;
+    //  case AQ_FRESH:
+    //    SER_PUSH.print(0/*F("Fresh")*/); break;
+    //  case AQ_LOW_POLLUTION:
+    //    SER_PUSH.print(1/*F("LowPollution")*/); break;
+    //  case AQ_POLLUTION:
+    //    SER_PUSH.print(2/*F("Pollution")*/); break;
+    //  case AQ_HIGH_POLLUTION:
+    //    SER_PUSH.print(3/*F("HighPollution")*/); break;
+    //}
+    SER_PUSH.print(analogRead(pin_air_quality));
 
     SER_PUSH.println(",");  //sum ~ 800ms / push
   }
@@ -255,12 +256,12 @@ ISR(TIMER1_OVF_vect)
     //Serial.println(snd_last_avg);
   }
 
-  if (air_quality_sensor_state == AQ_WORK && ++cntr_aq_sample >= 10000)  //200us * 10000 = 2s
+  /*if (air_quality_sensor_state == AQ_WORK && ++cntr_aq_sample >= 10000)  //200us * 10000 = 2s
   {
     cntr_aq_sample = 0;
     //Serial.println("tm1 isr");
     air_quality_sensor_evaluation();
-  }
+  }*/
 }
 
 
@@ -351,13 +352,13 @@ void air_quality_sensor_evaluation()
   //Serial.println(aq_std_vol);
   //Serial.println(aq_first_vol);
 
-  if (aq_first_vol - aq_last_vol > 400 || aq_first_vol > 700)
+  if (aq_first_vol - aq_last_vol > 200 || aq_first_vol > 350)
   {
     aq_result = AQ_HIGH_POLLUTION;
-  } else if ((aq_first_vol - aq_last_vol > 400 && aq_first_vol < 700) || aq_first_vol - aq_std_vol > 150)
+  } else if ((aq_first_vol - aq_last_vol > 200 && aq_first_vol < 350) || aq_first_vol - aq_std_vol > 75)
   {
     aq_result = AQ_POLLUTION;
-  } else if ((aq_first_vol - aq_last_vol > 200 && aq_first_vol < 700) || aq_first_vol - aq_std_vol > 50)
+  } else if ((aq_first_vol - aq_last_vol > 100 && aq_first_vol < 350) || aq_first_vol - aq_std_vol > 25)
   {
     aq_result = AQ_LOW_POLLUTION;
   } else
