@@ -58,9 +58,8 @@ Step 3: Config xively channels:
 	3.4 # wget --no-check-certificate https://github.com/KillingJacky/Aethera/raw/master/AetheraCloud/uart_passthrough.lua
 	3.5 # cp iot /etc/config/iot
 	3.6 # cp uart_passthrough.lua /usr/lib/lua/dragino/uart_passthrough.lua
+	3.7 # chmod 777 /usr/lib/lua/dragino/uart_passthrough.lua
 	
-	
-
 
 ###2. Assembly
 
