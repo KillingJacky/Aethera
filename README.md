@@ -46,21 +46,19 @@ Step 6: Upload the sketch.
 
 ####1.2. OpenWrt Side
 
-Step 1: Same as Arduino Side's step 1.
+Step 1: Config the Seeeduino Cloud to connect to your home's WiFi AP, refer to [this wiki](http://www.seeedstudio.com/wiki/Seeeduino_Cloud#Configure_Network).
 
-Step 2: Config the Seeeduino Cloud to connect to your home's WiFi AP, refer to [this wiki](http://www.seeedstudio.com/wiki/Seeeduino_Cloud#Configure_Network).
+Step 2: Config xively channels:
 
-Step 3: Config xively channels:
-
-	3.1 ssh to seeeduino cloud: ssh root@seeed.local, password is [seeeduino]
-	3.2 # cd /tmp
+	2.1 ssh to seeeduino cloud: ssh root@seeed.local, password is [seeeduino]
+	2.2 # cd /tmp
 		# opkg update
 		# opkg install wget
-	3.3 # wget --no-check-certificate https://github.com/KillingJacky/Aethera/raw/master/AetheraCloud/iot
-	3.4 # wget --no-check-certificate https://github.com/KillingJacky/Aethera/raw/master/AetheraCloud/uart_passthrough.lua
-	3.5 # cp iot /etc/config/iot
-	3.6 # cp uart_passthrough.lua /usr/lib/lua/dragino/uart_passthrough.lua
-	3.7 # chmod 777 /usr/lib/lua/dragino/uart_passthrough.lua
+	2.3 # wget --no-check-certificate https://github.com/KillingJacky/Aethera/raw/master/AetheraCloud/iot
+	2.4 # wget --no-check-certificate https://github.com/KillingJacky/Aethera/raw/master/AetheraCloud/uart_passthrough.lua
+	2.5 # cp iot /etc/config/iot
+	2.6 # cp uart_passthrough.lua /usr/lib/lua/dragino/uart_passthrough.lua
+	2.7 # chmod 777 /usr/lib/lua/dragino/uart_passthrough.lua
 	
 
 ###2. Assembly
