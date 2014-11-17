@@ -68,6 +68,8 @@ int aq_first_vol, aq_last_vol, aq_std_vol, aq_std_vol_sum;
 static int cntr_aq_avg = 0;
 int aq_result = AQ_WARMUP;
 
+/* Digital Light sensor */
+int32_t lux_last_valid = 0;
 
 /* Global varibles */
 boolean valid_dust = false;
@@ -467,7 +469,12 @@ float iReadDensityDust(void) {
 //*****************************************************************************
 unsigned long iReadLux(void) {
     //cost time: > 100ms
-    return TSL2561.readVisibleLux();
+    int32_t lux0 = TSL2561.readVisibleLux();
+    if(lux0 != -1)
+    {
+      lux_last_valid = lux0;
+    }
+    return lux_last_valid;
 }
 //*****************************************************************************
 //
